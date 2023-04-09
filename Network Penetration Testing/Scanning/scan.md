@@ -150,20 +150,23 @@ The id=+1 that means the host is not communicating with any machine on the netwo
 
 The id=+2 that means the zombie communicate with 2 hosts (attacker IP & target IP)
 
+___
 
+### Firewall / IDS Evasion
 
+**Usage**
 
+1-Via fragmentation
 
+> nmap -f -sS 192.168.x.x -p 80,21,153,443 -Pn -n --disable-arp-ping
 
+2-Via spoofing IP
 
+> nmap -p 80 -D 192.168.2,ME,192.168.2.2 192.168.2.1
 
+3-Via generate random decoys
 
-
-
-
-
-
-
+> nmap -D RND:10 192.168.x.x -sS -p 80 -Pn --disable-arp-ping
 
 
 
