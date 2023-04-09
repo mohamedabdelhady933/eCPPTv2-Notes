@@ -87,4 +87,83 @@ hosts discovering and port scanning techniques.
 
 > nmap -O -v 192.168.x.x
 
+5-Christmas scan is a combination of (FIN, Push , Urgent) flags
+
+> nmap -sX 192.168.x.x 
+
 more info about [ Nmap ](https://nmap.org/book/man-port-scanning-techniques.html)
+
+___
+
+### Nmap NSE 
+
+Nmap Scripts Engine
+
+**Usage**
+
+1-All scripts location 
+
+>/usr/share/nmap/scripts
+
+2-Search for a specific category/script and get more info
+
+> nmap --script-help "smb*" 
+> nmap --script-help smb-vuln-cve2009-3103
+
+3-Get Whois information
+
+> nmap --script whois-domain domain.com -sn
+
+4-Get smb OS information 
+
+> nmap --script smb-os-discovery -p 445 192.168.x.x
+
+5-Show smb shares
+
+> nmap smb-enum-shares 192.168.x.x -p 445
+
+6-Run default scripts ( OS , shares , smb information , security authentication , methods supported ,....more)
+
+> nmap --script default 192.168.x.x
+
+___
+
+### Idle Scan 
+
+is one of the most famous techniques used to perform a port scan without sending packets to the target host containing the attacker IP. All it requires is a third party host called zombie
+
+**Flow**
+
+1-Assume That we already know that port 135 on the zombie is open
+
+> hping3 -S -r 192.168.1.5 -p 135
+
+![image](https://user-images.githubusercontent.com/73122852/230792772-67b40cf9-7353-44ab-8d2b-4f8d2167f945.png)
+
+The id=+1 that means the host is not communicating with any machine on the network but us. So our host is a good zombile candidate for our idle scans 
+
+2- Spoof the zombie's IP if the target is open there will be communication between the zombie machine and the target 
+
+> hping3 -a 192.168.1.5 -S 192.168.1.7 -p 23
+
+![image](https://user-images.githubusercontent.com/73122852/230793721-5abae249-6aba-4df9-90f5-4f66867a4801.png)
+
+The id=+2 that means the zombie communicate with 2 hosts (attacker IP & target IP)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
