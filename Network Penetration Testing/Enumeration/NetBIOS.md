@@ -72,6 +72,13 @@ basically a wrapper around rpcclient , net , nmblookup and smbclient. That can g
 
 * Rpcclient
 
+a tool that can execute Microsoft RPC (Remote Procedure Call) functionalities.
+
+> rpcclient -N -U "" 192.168.x.x
+
+Then Use enumdomusers to list all users.
+
+![image](https://user-images.githubusercontent.com/73122852/230804850-70ed025e-9a90-49e3-b352-a14f1fff68f2.png)
 
 
 
