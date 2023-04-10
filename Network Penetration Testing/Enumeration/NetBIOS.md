@@ -49,7 +49,7 @@ SMB lets you shares files , disks, directories, printers.
 
 > smbclient -L 192.168.x.x
 
-> smbclient \\\192.168.x.x\folder
+> smbclient //192.168.x.x/folder
 
 ---
 
