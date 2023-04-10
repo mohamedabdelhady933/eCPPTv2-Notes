@@ -48,6 +48,7 @@ SMB lets you shares files , disks, directories, printers.
 2-list domains, computers and resources shared by a computer in the network. 
 
 > smbclient -L 192.168.x.x
+
 > smbclient \\\192.168.x.x\folder
 
 ---
@@ -60,6 +61,8 @@ gather information such as shares, users, groups, registry keys and much more.
 Null sessions rely on Common Internet File System (CIFS) and Server Message Block (SMB) API, that return information even to an unauthenticated user.
 
 > net use \\192.168.x.x\IPC$ "" /u:""
+
+also using smbclient .
 
 ---
 
