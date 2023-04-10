@@ -48,6 +48,7 @@ SMB lets you shares files , disks, directories, printers.
 2-list domains, computers and resources shared by a computer in the network. 
 
 > smbclient -L 192.168.x.x
+> smbclient \\\192.168.x.x\folder
 
 ---
 
