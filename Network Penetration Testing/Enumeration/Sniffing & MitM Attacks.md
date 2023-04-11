@@ -27,24 +27,58 @@ network in order to redirect the traffic.
     - By exploiting the network via ARP poisoning, the attacker is able to redirect the traffic of the selected victims to a specific machine (usually the attacker's machine). Doing this will enable the attacker to not only monitor, but also modify the traffic.
 
 
+---
+
+* List summarizes when ARP is used
+  - A host desires to send a packet to another host in the same
+network
+
+  - A host desires to reach another host beyond his local
+network and needs the gateway hardware address
+
+  - A router needs to forward a packet for one host through
+another router
+
+  - A router needs to forward a packet to the destination host
+on the same network
+
+---
+
+* ARP Poisoning ways
+ - Host Poisoning
+   - In the first scenario the attacker will create a Man in the Middle configuration between two hosts, transferring data between them.
+   - All the traffic from first PC to Second PC and from second PC to first PC will pass through attacker PC. Attacker PC must be able to forward the packets quickly to keep the system administrator from suspecting anything.
+   
+ - Gateway Poisoning
+   - The second scenario is one-way: the machine that is going to sniff traffic in the network will send Gratuitous ARP replys to some or all the hosts in a network, announcing his MAC address as the MAC address of the default gateway for the network.
 
 
+---
 
+* Sniffing Tools
+  - dsniff 
+    - The dsniff suite has a collection of tools for active/passive sniffing, MITM attacks and can also monitor the network for data such as passwords, emails, files and much more.
+  - Wireshark
+  - Tcpdump
 
+---
 
+* Flow
 
+1- Show the interfaces
 
+> tcpdump -D
 
+2- sniff (eth1)
 
+> tcpdump -i eth1
 
+3- Sniff Web for a specific host
 
+> tcpdump -i eth1 host domain.com
 
+4- Filter traffic for a specific source and distination
 
-
-
-
-
-
-
+> tcpdump -i eth1 src 192.168.x.x and dst 192.168.x2.x2
 
 
