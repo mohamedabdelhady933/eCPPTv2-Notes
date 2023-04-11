@@ -1,6 +1,7 @@
 # SNMP (Simple Network Management Protocol)
 
-it is used for exchanging management information between network devices.
+it is used for exchanging management information between network devices (printers,switches,servers,....).
+
 
 * SNMP commands types
   - Read
