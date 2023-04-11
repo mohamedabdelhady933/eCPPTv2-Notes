@@ -1,4 +1,4 @@
-# Sniffing & MitM Attacks
+# Sniffing 
 
 is a network layer attack consisting of capturing packets transmitted by other computers. having these packets will not only allow us to read the data, but also search for sensitive information like
 passwords, session tokens, or various types of confidential information.
@@ -80,5 +80,32 @@ on the same network
 4- Filter traffic for a specific source and distination
 
 > tcpdump -i eth1 src 192.168.x.x and dst 192.168.x2.x2
+
+---
+
+# MITM Attacks
+
+![image](https://user-images.githubusercontent.com/73122852/231283265-50246f25-a3a2-46e6-be16-b9b6a5f69860.png)
+
+As you see attacker is able to read , modify the packets transmitted between two peers.
+
+
+
+
+
+* DHCP Spoofing
+
+DHCP is a service usually running on routers to dynamically assign or revoke |IP address to new hosts on the network. The protocol is based on the UDP protocol and consists of an exchange of messages that are mostly sent in broadcast and are visible to the entire broadcast domain.
+
+DHCP clients choose the best offer according to the lease time attribute in the DHCP offer: the longer the better.This packet is used to designate a winner between all the DHCP servers.
+
+
+
+
+
+
+
+
+
 
 
