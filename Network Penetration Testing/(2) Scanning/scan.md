@@ -164,9 +164,22 @@ ___
 
 > nmap -p 80 -D 192.168.2,ME,192.168.2.2 192.168.2.1
 
+> hping3 -a 192.168.x.122 -S -p 80 192.168.x.x
+
 3-Via generate random decoys
 
 > nmap -D RND:10 192.168.x.x -sS -p 80 -Pn --disable-arp-ping
 
+4- Random IP source
+
+> hping3 --rand-source -S -p 80 192.168.x.x -c 3
+
+5- decrease Data length
+
+> nmap -sS --data-length 10 -p 21 192.168.x.x
+
+6- MAC spoofing
+
+> nmap --spoof-mac apple 192.168.x.x -p 80 -Pn  --disable-arp-ping -n
 
 
