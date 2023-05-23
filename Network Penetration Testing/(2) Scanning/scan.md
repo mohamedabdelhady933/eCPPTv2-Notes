@@ -71,16 +71,20 @@ hosts discovering and port scanning techniques.
 1-Scan port 80 with SYN flag (-S / -sS ) 
 
 > hping3 -S -p 80 192.168.x.x
+
+
 > nmap -sS -p 80 192.168.x.x
 
 2-Get the open ports for a specific range (1-1000) with SYN flag (-S / -sS )
 
 > hping3 -S --scan 1-1000 192.168.x.x
+
 > nmap -sS -p 1-1000 192.168.x.x
 
 3-TCP and UDP scans
 <!-- There are number of services that run and commuunicate over UDP (DNS , SNMP , DHCP , netbios-ns , rpcbind ,.....) -->
 > nmap -sT -p 80 192.168.x.x
+
 > nmap -sU -p 137 192.168.x.x
 
 4-Perform OS fingerprinting
@@ -108,6 +112,7 @@ Nmap Scripts Engine
 2-Search for a specific category/script and get more info
 
 > nmap --script-help "smb*" 
+
 > nmap --script-help smb-vuln-cve2009-3103
 
 3-Get Whois information
